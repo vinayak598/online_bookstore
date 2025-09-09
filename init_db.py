@@ -1,12 +1,11 @@
 from app import app
 from models import db, Book
 
-# Initialize db with the app
 db.init_app(app)
 
 with app.app_context():
     db.create_all()
-    
+
     sample_books = [
         Book(title="The Great Gatsby", author="F. Scott Fitzgerald", price=299.99, image="book_placeholder.png"),
         Book(title="1984", author="George Orwell", price=199.99, image="book_placeholder.png"),
@@ -22,7 +21,7 @@ with app.app_context():
         Book(title="Animal Farm", author="George Orwell", price=189.99, image="book_placeholder.png"),
         Book(title="Crime and Punishment", author="Fyodor Dostoevsky", price=379.99, image="book_placeholder.png"),
         Book(title="The Odyssey", author="Homer", price=459.99, image="book_placeholder.png"),
-        Book(title="The Divine Comedy", author="Dante Alighieri", price=439.99, image="book_placeholder.png")
+        Book(title="The Divine Comedy", author="Dante Alighieri", price=439.99, image="book_placeholder.png"),
     ]
 
     db.session.add_all(sample_books)
